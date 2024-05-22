@@ -11,10 +11,10 @@
 - [Installation](#installation)
 - [Getting Started](#getting-started)
 - [Examples](#examples)
-  * [Grid Unit Count - Vertical & Horizontal](#grid-unit-count---vertical--horizontal)
-  * [Grid Background Color](#grid-background-color)
-  * [Grid Layers - Draw Grids on top of Grids](#grid-layers---draw-grids-on-top-of-grids)
-  * [Filters](#filters)
+  - [Grid Unit Count - Vertical & Horizontal](#grid-unit-count---vertical--horizontal)
+  - [Grid Background Color](#grid-background-color)
+  - [Grid Layers - Draw Grids on top of Grids](#grid-layers---draw-grids-on-top-of-grids)
+  - [Filters](#filters)
 - [Functional Options](#functional-options)
 - [TODO](#todo)
 
@@ -26,7 +26,7 @@ The main purpose of the library is to help creating image collages programmatica
 
 ## Installation
 
-`go get -u github.com/ozankasikci/go-image-merge`
+`go get -u github.com/766b/go-image-merge`
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ Import the library and give the image paths and grid size as the minimum require
 Basic usage:
 
 ```go
-import gim "github.com/ozankasikci/go-imagemerge"
+import gim "github.com/766b/go-image-merge"
 
 // accepts *Grid instances, grid unit count x, grid unit count y
 // returns an *image.RGBA object
@@ -56,6 +56,7 @@ See [Examples](#examples) for available options and advanced usage.
 ## Examples
 
 ### Grid Unit Count - Vertical & Horizontal
+
 ```go
 grids := []*gim.Grid{
     {ImageFilePath: "./cmd/gim/input/kitten.jpg"},
@@ -67,9 +68,11 @@ rgba, err := gim.New(grids, 2, 2).Merge()
 ```
 
 #### Output:
+
 ![](https://raw.githubusercontent.com/ozankasikci/ozankasikci.github.io/master/gim/grid-size-2-2.jpg)
 
 ### Grid Background Color
+
 ```go
 grids := []*gim.Grid{
     {
@@ -85,9 +88,11 @@ rgba, err := gim.New(grids, 2, 1).Merge()
 ```
 
 #### Output:
+
 ![](https://raw.githubusercontent.com/ozankasikci/ozankasikci.github.io/master/gim/grid-bg-color.jpg)
 
 ### Grid Layers - Draw Grids on top of Grids
+
 ```go
 grids := []*gim.Grid{
     {
@@ -121,6 +126,7 @@ rgba, err := gim.New(grids, 2, 1).Merge()
 ```
 
 #### Output:
+
 ![](https://raw.githubusercontent.com/ozankasikci/ozankasikci.github.io/master/gim/grid-layers.jpg)
 
 ## Filters
@@ -137,7 +143,6 @@ To apply filters, include them in the `Filters` slice of the `Grid` struct. Each
 
 ### Example: Black & White Filter
 
-
 ```go
 grids := []*gim.Grid{
     {
@@ -151,12 +156,15 @@ grids := []*gim.Grid{
     },
 }
 ```
+
 #### Output:
+
 ![](https://raw.githubusercontent.com/ozankasikci/ozankasikci.github.io/master/gim/black-white-filter.jpg)
 
 ## Functional Options
 
 ### OptBaseDir
+
 ```go
 // you can omit the full path if you set a base dir
 grids := []*gim.Grid{
@@ -170,6 +178,7 @@ rgba, err := gim.New(
 ```
 
 ### OptGridSize
+
 ```go
 // you can resize the grids in pixels
 grids := []*gim.Grid{
@@ -182,11 +191,13 @@ rgba, err := gim.New(
 	gim.OptGridSize(200,150),
 ).Merge()
 ```
+
 #### Output:
+
 ![](https://raw.githubusercontent.com/ozankasikci/ozankasikci.github.io/master/gim/grid-resize-pixels-200-150.jpg)
 
 ## TODO
+
 - [x] Add colored background support
 - [ ] Add resize support (stretch, fit etc.)
 - [x] Add filters
-
