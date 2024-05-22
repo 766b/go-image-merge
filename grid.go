@@ -1,9 +1,10 @@
 package imagemerge
 
 import (
-	"github.com/ozankasikci/go-image-merge/internal/imagefilter"
 	"image"
 	"image/color"
+
+	"github.com/766b/go-image-merge/imagefilter"
 )
 
 // Grid holds the data for each grid

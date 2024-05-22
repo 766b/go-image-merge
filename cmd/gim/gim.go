@@ -1,12 +1,13 @@
 package main
 
 import (
-	"github.com/ozankasikci/go-image-merge/internal/imagefilter"
-	gim "github.com/ozankasikci/go-image-merge/internal/imagemerge"
 	"image/color"
 	"image/jpeg"
 	"log"
 	"os"
+
+	gim "github.com/766b/go-image-merge"
+	"github.com/766b/go-image-merge/imagefilter"
 )
 
 func main() {
